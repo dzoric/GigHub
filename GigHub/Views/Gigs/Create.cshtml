@@ -14,12 +14,12 @@
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Date)
-        @Html.EditorFor(m => m.Date, new { @class = "form-control" })
+        @Html.TextBoxFor(m => m.Date, new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.Date)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Time)
-        @Html.EditorFor(m => m.Time, new { @class = "form-control" })
+        @Html.TextBoxFor(m => m.Time, new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.Time)
     </div>
     <div class="form-group">
