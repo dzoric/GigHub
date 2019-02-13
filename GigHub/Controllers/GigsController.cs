@@ -34,7 +34,7 @@ namespace GigHub.Controllers
                 Heading = "Gigs I'm Attending"
             };
 
-            return View("Gigs", "Shared", viewModel);
+            return View("Gigs", viewModel);
         }
 
         [Authorize]

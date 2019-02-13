@@ -30,7 +30,7 @@ namespace GigHub.Controllers
                 Heading = "Upcoming Gigs"
             };
 
-            return View("Gigs", "Shared", viewModel);
+            return View("Gigs", viewModel);
         }
 
         public ActionResult About()
