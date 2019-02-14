@@ -120,7 +120,7 @@ namespace GigHub.Controllers
                 .Include(g=>g.Attendances.Select(a=>a.Attendee))
                 .Single(g => g.Id == viewModel.Id && g.ArtistId == userId);
 
-            gig.Modify(viewModel.GetDateTime(), viewModel.Venue, viewModel.Genre)
+            gig.Modify(viewModel.GetDateTime(), viewModel.Venue, viewModel.Genre);
             
             _context.SaveChanges();
 
