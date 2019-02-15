@@ -215,6 +215,11 @@
     <Compile Include="Controllers\Api\GigsController.cs" />
     <Compile Include="Controllers\Api\FollowingsController.cs" />
     <Compile Include="Controllers\Api\NotificationsController.cs" />
+    <Compile Include="Migrations\201902151403161_RemovedSomeGigDetailsViewProperties.cs" />
+    <Compile Include="Migrations\201902151403161_RemovedSomeGigDetailsViewProperties.Designer.cs">
+      <DependentUpon>201902151403161_RemovedSomeGigDetailsViewProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\GigDetailsViewModel.cs" />
     <Compile Include="Dtos\AttendanceDto.cs" />
     <Compile Include="Controllers\Api\AttendancesController.cs" />
     <Compile Include="Controllers\GigsController.cs" />
@@ -267,6 +272,10 @@
     <Compile Include="Migrations\201902141404037_AddNotification.cs" />
     <Compile Include="Migrations\201902141404037_AddNotification.Designer.cs">
       <DependentUpon>201902141404037_AddNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902151316398_AddedSomeGigDetailsViewProperties.cs" />
+    <Compile Include="Migrations\201902151316398_AddedSomeGigDetailsViewProperties.Designer.cs">
+      <DependentUpon>201902151316398_AddedSomeGigDetailsViewProperties.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -360,6 +369,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Gigs\GigForm.cshtml" />
     <Content Include="Views\Gigs\Mine.cshtml" />
+    <Content Include="Views\Gigs\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -407,6 +417,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902141404037_AddNotification.resx">
       <DependentUpon>201902141404037_AddNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902151316398_AddedSomeGigDetailsViewProperties.resx">
+      <DependentUpon>201902151316398_AddedSomeGigDetailsViewProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902151403161_RemovedSomeGigDetailsViewProperties.resx">
+      <DependentUpon>201902151403161_RemovedSomeGigDetailsViewProperties.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

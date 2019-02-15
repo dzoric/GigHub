@@ -9,7 +9,7 @@ namespace GigHub.Dtos
         public bool IsCanceled { get; set; }
 
         public UserDto Artist { get; set; }
-        
+
         public DateTime DateTime { get; set; }
 
         public string Venue { get; set; }

@@ -8,9 +8,9 @@ namespace GigHub.App_Start
     {
         public AutoMapperProfile() 
         {
-            CreateMap<ApplicationUser, UserDto>();
-            CreateMap<Gig, GigDto>();
-            CreateMap<Notification, NotificationDto>();
+            CreateMap<ApplicationUser, UserDto>().ReverseMap();
+            CreateMap<Gig, GigDto>().ReverseMap();
+            CreateMap<Notification, NotificationDto>().ReverseMap();
         }
     }
 }
