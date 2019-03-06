@@ -7,17 +7,17 @@ using System.Web;
 
 namespace GigHub.Persistance
 {
-    public class UnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
         private readonly ApplicationDbContext _context;
 
-        public GigRepository Gigs { get; private set; }
+        public IGigRepository Gigs { get; private set; }
 
-        public AttendanceRepository Attendances { get; set; }
+        public IAttendanceRepository Attendances { get; set; }
 
-        public GenreRepository Genres { get; set; }
+        public IGenreRepository Genres { get; set; }
 
-        public FollowingRepository Followings { get; set; }
+        public IFollowingRepository Followings { get; set; }
 
         public UnitOfWork(ApplicationDbContext context)
         {
