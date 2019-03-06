@@ -1,9 +1,10 @@
-﻿using GigHub.Models;
-using GigHub.Persistance;
-using GigHub.Repositories;
-using GigHub.ViewModels;
+﻿using GigHub.Core;
+using GigHub.Core.Models;
+using GigHub.Core.ViewModels;
 using Microsoft.AspNet.Identity;
+using Ninject;
 using System.Linq;
+using System.Reflection;
 using System.Web.Mvc;
 
 namespace GigHub.Controllers
@@ -12,9 +13,11 @@ namespace GigHub.Controllers
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        public GigsController(IUnitOfWork unitOfWork)
+        public GigsController()
         {
-            _unitOfWork = unitOfWork;
+            var kernel = new StandardKernel();
+            kernel.Load(Assembly.GetExecutingAssembly());
+            _unitOfWork = kernel.Get<IUnitOfWork>();
         }
 
         public ActionResult Details(int id)
