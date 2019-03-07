@@ -15,11 +15,9 @@ namespace GigHub.Controllers.Api
     {
         private IUnitOfWork _unitOfWork;
 
-        public GigsController()
+        public GigsController(IUnitOfWork unitOfWork)
         {
-            var kernel = new StandardKernel();
-            kernel.Load(Assembly.GetExecutingAssembly());
-            _unitOfWork = kernel.Get<IUnitOfWork>();
+            _unitOfWork = unitOfWork;
         }
 
         [HttpDelete]
@@ -27,12 +25,13 @@ namespace GigHub.Controllers.Api
         {
             var userId = User.Identity.GetUserId();
 
-            var gig = _unitOfWork.Gigs.GetGigFromArtist(id, userId);            
+            var gig = _unitOfWork.Gigs.GetGigWithAttendees(id);
 
-            if (gig.IsCanceled)
-            {
+            if (gig == null || gig.IsCanceled)
                 return NotFound();
-            }
+
+            if (gig.ArtistId != userId)
+                return Unauthorized();
 
             gig.Cancel();
 

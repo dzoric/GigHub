@@ -19,6 +19,7 @@ namespace GigHub.App_Start
             Bind<IGigRepository>().To<GigRepository>();
             Bind<IGenreRepository>().To<GenreRepository>();
             Bind<IFollowingRepository>().To<FollowingRepository>();
+            Bind<INotificationRepository>().To<NotificationRepository>();
         }
     }
 }
