@@ -70,5 +70,12 @@ namespace GigHub.Persistence.Repositories
         {
             _context.Gigs.Add(gig);
         }
+
+        public Gig GetGigFromArtist(int id, string userId)
+        {
+            return _context.Gigs
+                .Include(g => g.Attendances.Select(a => a.Attendee))
+                .Single(g => g.Id == id && g.ArtistId == userId);
+        }
     }
 }

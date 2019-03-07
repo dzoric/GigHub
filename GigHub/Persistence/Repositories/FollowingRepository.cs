@@ -16,9 +16,30 @@ namespace GigHub.Persistence.Repositories
             _context = context;
         }
 
+        public void Add(Following following)
+        {
+            _context.Followings.Add(following);
+        }
+
+        public bool DoesFollowingExist(string userId, string foloweeId)
+        {
+            return _context.Followings.Any(a => a.FollowerId == userId && a.FolloweeId == foloweeId);
+        }
+
         public IQueryable<Following> GetFollowing(string userId, string artistId)
         {
             return _context.Followings.Where(f => f.FollowerId == userId && f.FolloweeId == artistId);
+        }
+
+        public Following GetSingleFollowing(string userId, string followeeId)
+        {
+           return _context.Followings
+                            .SingleOrDefault(f => f.FollowerId == userId && f.FolloweeId == followeeId);
+        }
+
+        public void Remove(Following following)
+        {
+            _context.Followings.Remove(following);
         }
     }
 }

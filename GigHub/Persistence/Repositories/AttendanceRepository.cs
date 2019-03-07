@@ -27,5 +27,25 @@ namespace GigHub.Persistence.Repositories
         {
             return _context.Attendances.Where(a => a.GigId == gigId && a.AttendeeId == userId);
         }
+
+        public void Add(Attendance attendance)
+        {
+            _context.Attendances.Add(attendance);
+        }
+
+        public void Remove(Attendance attendance)
+        {
+            _context.Attendances.Remove(attendance);
+        }
+
+        public Attendance GetSingleAttendance(int gigId, string userId)
+        {
+            return _context.Attendances.SingleOrDefault(a => a.GigId == gigId && a.AttendeeId == userId);
+        }
+
+        public bool DoesAttendanceExist(string userId, int gigId)
+        {
+            return _context.Attendances.Any(a => a.AttendeeId == userId && a.GigId == gigId);
+        }
     }
 }
