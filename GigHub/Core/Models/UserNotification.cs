@@ -8,7 +8,7 @@ namespace GigHub.Core.Models
     {
         [Key]
         [Column(Order = 1)]
-        public string UserId { get; private set; }
+        public string UserId { get; set; }
 
         [Key]
         [Column(Order = 2)]
@@ -18,9 +18,9 @@ namespace GigHub.Core.Models
 
         public Notification Notification { get; private set; }
 
-        public bool IsRead { get; private set; }
+        public bool IsRead { get;  set; }
 
-        protected UserNotification()
+        public UserNotification()
         {
 
         }

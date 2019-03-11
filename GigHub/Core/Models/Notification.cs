@@ -18,7 +18,7 @@ namespace GigHub.Core.Models
         [Required]
         public Gig Gig { get; private set; }
 
-        protected Notification()
+        public Notification()
         {
         }
 

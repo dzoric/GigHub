@@ -233,6 +233,7 @@
     <Compile Include="Persistence\EntityConfigurations\GenreConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\GigConfiguration.cs" />
     <Compile Include="Persistence\EntityConfigurations\UserNotificationConfiguration.cs" />
+    <Compile Include="Persistence\IApplicationDbContext.cs" />
     <Compile Include="Persistence\Migrations\201902151403161_RemovedSomeGigDetailsViewProperties.cs" />
     <Compile Include="Persistence\Migrations\201902151403161_RemovedSomeGigDetailsViewProperties.Designer.cs">
       <DependentUpon>201902151403161_RemovedSomeGigDetailsViewProperties.cs</DependentUpon>
